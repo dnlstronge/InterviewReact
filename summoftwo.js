@@ -10,14 +10,24 @@ function App() {
   const [number2, setNumber2] = React.useState();
   const [total, setTotal] = React.useState(0);
 
+  const handleNumber1 = (e) => {
+    setNumber1(e.target.value)
+  }
+  const handleNumber2 = (e) => {
+    setNumber2(e.target.value)
+  }
+  const handleClick = () => {
+    let sum = parseInt(number1) + parseInt(number2)
+   setTotal(sum)
+  }
+  
   return (
     <div>
       <h2>Adding Two Numbers</h2>
-      <input placeholder="First Number" type="number" />
-      <input placeholder="Second Number" type="number" />
-
-      <button>Add Two Numbers</button>
-      <p>Total:</p>
+      <input onChange={handleNumber1} placeholder="First Number" type="number" />
+      <input onChange={handleNumber2} placeholder="Second Number" type="number" />
+      <button onClick={handleClick}>Add Two Numbers</button>
+      <p>Total: {total} </p>
     </div>
   );
 }
