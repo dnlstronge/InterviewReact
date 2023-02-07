@@ -12,10 +12,11 @@ function Child() {
 }
 
 // Add code only here
-function Parent() {
+function Parent(props) {
   return (
     <div>
       <h3>Parent Component</h3>
+    {props.children}
     </div>
   );
 }
