@@ -3,8 +3,7 @@
   
   Functionality: When user place numbers on first and second input and hit the button. The sum should appear on the `Total: ` as an output. 
   
-  Solution: https://codepen.io/angelo_jin/pen/BawrWzy
-  Video for reference: https://youtu.be/VzNNjNmbXpY
+you are given the following code: 
 **/
 function App() {
   const [number1, setNumber1] = React.useState();
