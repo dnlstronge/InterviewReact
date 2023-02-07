@@ -8,20 +8,15 @@ Feel free to use any string to update the parent's current string.
 
 
 */
-function Child() {
-  return (
-    <>
-      <div>Child</div>
-      <button>Change Parent Value</button>
-    </>
-  );
-}
-
 function Parent() {
   const [value, setValue] = React.useState(
     "I need to be updated from my child"
   );
 
+  const handleChild = () => {
+    setValue("I am updated by my child")
+  }
+  
   return (
     <>
       <h3>Update Parent State Challenge (Using Callback)</h3>
@@ -31,11 +26,10 @@ function Parent() {
       </div>
 
       <div className="wrapper">
-        <Child />
+        <Child updateChild={handleChild}/>
       </div>
     </>
   );
 }
 
 ReactDOM.render(<Parent />, document.getElementById("root"));
-*/
