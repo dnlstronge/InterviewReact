@@ -5,13 +5,20 @@ you are given the following:
   
 **/
 const App = () => {
-  const [] = React.useState(0);
+    const [counter, setCounter] = React.useState(0);
 
+    const handle_up = () =>  {
+      setCounter( prev => prev +1)
+    }
+
+    const handle_down = () => {
+      setCounter( prev => prev -1)
+    }
   return (
     <div>
-      <h2>Counter: 0</h2>
-      <button>Increment</button>
-      <button>Decrement</button>
+      <h2>Counter: {counter} </h2>
+      <button onClick={handle_up}>Increment</button>
+      <button onClick={handle_down}>Decrement</button>
     </div>
   );
 };
