@@ -1,18 +1,23 @@
 /* Clicking the button should hide the string 
 */
+import React, {useState} from "react"
 
-          import React from "react"
+
+const App = () => {
 
 
-          const App = () => {
-              return (
-                  <div>
-                      <button>Click to hide</button>
-                      <p>HIDE ME</p>
-                  </div>
-              )
-          }
+    const [hide, setHide] = useState(true)
+    const handleClick = () => {
+        hide ? setHide(false) : setHide(true)
+    }
 
-          export default App;
+    return (
+        <div>
+            <button onClick={handleClick}>Click to hide</button>
+            {hide &&
+            <p>HIDE ME</p>}
+        </div>
+    )
+}
 
-          const App = ()
+export default App;
