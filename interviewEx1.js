@@ -16,18 +16,23 @@ Ensure all Counter components still update and function independently after this
 */
 
 
+/* First I change the class components in to functional components, Move the array stored in data into state (counter)*/
 
-
-import React, { Component } from "react";
+import React, { useState, Component } from "react";
 import { Button } from "react-bootstrap";
 
 // state data for 3 counters
 const data = [{ id: 1, value: 0 }, { id: 2, value: 0 }, { id: 3, value: 0 }];
 
+
+
+
+
+
+
 // Counter Component
-class Counter extends Component {
-  render() {
-    const { value } = this.props;
+const Counter = (value) => {;
+    
     return (
       <div className="counter">
         <b>{value}</b>
@@ -42,11 +47,16 @@ class Counter extends Component {
       </div>
     );
   }
-}
 
-class App extends Component {
-  render() {
-    const [counter, setCounter]
+const App = () => {
+
+const [counter, setCounter] = useState(
+  [
+    { id: 1, value: 0 }, 
+    { id: 2, value: 0 }, 
+    { id: 3, value: 0 }
+  ]
+)
 
     return (
 
@@ -57,6 +67,5 @@ class App extends Component {
       </div>
     );
   }
-}
-export default App;
 
+export default App;
