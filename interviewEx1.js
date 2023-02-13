@@ -19,7 +19,7 @@ Ensure all Counter components still update and function independently after this
 /* [x] First I change the class components in to functional components, Move the array stored in data into state (counter)
    [x] then create handlers and pass as props to Counter.
    
-   [x] scratch this -- question is now, given and array output a value and buttons which increment + decrement, and display the total /
+   [x] scratch this -- question is now, given and array output a value and buttons which increment + decrement, and display the total */
 
 import React, { useState, Component } from "react";
 import { Button } from "react-bootstrap";
