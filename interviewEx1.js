@@ -16,7 +16,10 @@ Ensure all Counter components still update and function independently after this
 */
 
 
-/* First I change the class components in to functional components, Move the array stored in data into state (counter)*/
+/* [x] First I change the class components in to functional components, Move the array stored in data into state (counter)
+   [x] then create handlers and pass as props to Counter.
+   
+   [x] scratch this -- question is now, given and array output a value and buttons which increment + decrement, and display the total /
 
 import React, { useState, Component } from "react";
 import { Button } from "react-bootstrap";
@@ -27,45 +30,5 @@ const data = [{ id: 1, value: 0 }, { id: 2, value: 0 }, { id: 3, value: 0 }];
 
 
 
-
-
-
 // Counter Component
-const Counter = (value) => {;
-    
-    return (
-      <div className="counter">
-        <b>{value}</b>
-        <div className="counter-controls">
-          <Button variant="danger" className="mr-2">
-            -
-          </Button>
-          <Button variant="success" className="mr-2">
-            +
-          </Button>
-        </div>
-      </div>
-    );
-  }
 
-const App = () => {
-
-const [counter, setCounter] = useState(
-  [
-    { id: 1, value: 0 }, 
-    { id: 2, value: 0 }, 
-    { id: 3, value: 0 }
-  ]
-)
-
-    return (
-
-      <div>
-        {data.map(counter => (
-          <Counter key={counter.id} value={counter.value} />
-        ))}
-      </div>
-    );
-  }
-
-export default App;
